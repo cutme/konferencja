@@ -1,0 +1,55 @@
+.c-nav-social {
+	width: 100%;
+	height: 7.2vw;
+	background-color: rgba(black, .5);
+	line-height: 7.2vw;
+	
+	.c-top & {
+		position: absolute;
+		left: 0; bottom: 0;
+		z-index: 10;
+	}
+	
+	&__title {
+		letter-spacing: 1px;
+		font-size: em(34);
+		font-size: 1.76vw;
+	}
+	
+	li {
+		display: inline-block;
+	}
+	
+	i {
+		margin-right: 10px;
+		font-size: 1.8vw;
+	}
+	
+	i, &__title {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	a {
+		display: block;
+		padding: 0 60px;
+		color: $gray;
+		
+		&:hover {
+			color: white;
+		}
+	}
+	
+	&--dark {
+		background-color: black;
+	}
+	
+	@media screen and ( min-width: 1920px ) {
+		height: 140px;
+		line-height: 140px;
+		
+		i {
+			font-size: em(36);
+		}
+	}
+}

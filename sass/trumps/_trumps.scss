@@ -1,0 +1,34 @@
+[class^="icon-"], [class*=" icon-"] {
+	@include icomoon;
+}
+
+.u-align-center {
+	text-align: center;
+}
+
+.u-smooth {
+	@include antialias;
+}
+
+.u-uppercase {
+	text-transform: uppercase;
+}
+
+.u-posx {
+	@include scut-center-transform(x);
+}
+
+.u-posy {
+	@include scut-center-transform(y);
+}
+
+.safari {
+	* {
+		-webkit-backface-visibility: hidden;
+		-webkit-transform-style: preserve-3d;
+	}
+}
+
+.color-blue--darker {
+	color: $blue--darker;
+}

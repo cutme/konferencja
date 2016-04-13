@@ -1,0 +1,30 @@
+span.ui-checkbox {
+	@include hover;
+	position: relative;
+	display: inline-block;
+	width: 34px; height: 34px;
+	background-color: white;
+	cursor: pointer;
+}
+
+span.ui-checkbox {
+	position: relative;
+	top: 4px;
+	border: 2px solid #c9c9c9;
+	overflow: hidden;
+}
+
+span.ui-helper-hidden {
+	display: none;
+}
+
+span.ui-checkbox-state-checked,
+span.ui-checkbox-state-checked-hover {
+	background-color: $blue;
+	border-color: $blue;
+}
+
+.ui-helper-hidden-accessible {
+	position: absolute;
+	left: -999em;
+}

@@ -1,0 +1,11 @@
+.c-regular {
+	margin-bottom: 100px;
+	
+	p {
+		margin-bottom: 2em;
+		
+		@media screen and ( max-width: $ipad_portrait ) {
+			font-size: em(18);
+		}
+	}
+}

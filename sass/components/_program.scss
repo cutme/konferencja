@@ -1,0 +1,88 @@
+.c-program {
+	margin-bottom: 80px;
+	border-bottom: 2px solid $gray;
+	padding-bottom: 100px;
+	
+	td {
+		vertical-align: top;
+		padding: {
+			bottom: 5px;
+		}
+	}
+
+	&__col {
+		margin-bottom: 40px;
+	}
+
+	&__lead {
+		float: left;
+		margin-bottom: 40px;
+		padding-bottom: 10px;
+		border-bottom: 4px solid $blue--darker;
+		font-weight: $light;
+
+		&--day {
+			float: left;
+			margin-right: 5px;
+			font-size: em(80);
+			line-height: 1;
+		}
+
+		&--month-year {
+			float: left;
+			font-size: em(34);
+			line-height: 1;
+		}
+	}
+
+	&__table {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	&__hour {
+		white-space: nowrap;
+	}
+
+	@media screen and ( min-width: 481px ) {
+		p {
+			padding-right: 20px;
+		}
+		
+		td {
+			padding-right: 20px;
+		}
+		
+		.buffer {
+			padding: {
+				top: 30px;
+				bottom: 30px;
+			}
+		}
+	}
+	
+	@media screen and ( min-width: 769px ) {
+		&__col {
+			float: left;
+			width: 50%;
+		}
+	}
+	
+	@media screen and ( max-width: $ipad_landscape ) {
+		td {
+			font-size: em(18);
+		}
+	}
+	
+	@media screen and ( max-width: $smart_landscape ) {
+		td {
+			display: block;			
+			padding-bottom: 10px;
+		}
+		
+		&__hour {
+			padding-bottom: 0 !important;
+		}
+	}
+		
+}

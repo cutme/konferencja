@@ -1,0 +1,20 @@
+.c-after {
+	@include background-size( cover );
+	background-position: center;
+	padding: 70px 0 100px 0;
+	
+	&__content {
+		background-color: white;
+		padding: 70px;
+		
+		p {
+			font-weight: $light;
+		}
+	}
+	
+	@media screen and ( max-width: $ipad_portrait ) {
+		&__content {
+			padding: 60px grid(70, 768);
+		}
+	}
+}

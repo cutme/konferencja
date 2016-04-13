@@ -1,0 +1,14 @@
+.o-wrap {
+	position: relative; z-index: 10;
+	max-width: $grid-base-width+px;
+	margin: 0 auto;
+	padding: 0 20px;
+
+	&--wide {
+		max-width: $grid-base-width-wide+px;
+	}
+	
+	@media screen and ( max-width: $smart_landscape ) {
+		padding: 0 10px;
+	}
+}

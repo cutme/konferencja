@@ -1,0 +1,17 @@
+.c-logo {
+	display: inline-block;	
+	margin-bottom: 6vw;
+	padding: 20px;
+	border: 3px solid white;
+	text-transform: uppercase;
+	white-space: nowrap;
+	font: {
+		//size: em(40);
+		size: 2.06vw;
+		weight: $bold;
+	}
+	
+	@media screen and ( min-width: 1920px ) {
+		margin-bottom: 120px;
+	}
+}

@@ -1,0 +1,76 @@
+.c-form {
+	&__lead {
+		display: block;
+		margin-bottom: 5px;
+		letter-spacing: 1px;
+		font: {
+			size: em(20);
+		}
+		color: $gray--darker;
+	}
+	
+	textarea,
+	input {
+		&[type=email],
+		&[type=text] {
+			border: 2px solid #c9c9c9;
+			padding: 0 20px;
+			font-size: 21px;
+		}
+		
+	}
+	
+	input {
+		height: 58px;		
+	}
+	
+	textarea {
+		height: 112px;
+		border: 2px solid #c9c9c9;
+	}
+	
+	label {
+		display: block;
+		margin-bottom: 20px;
+	}
+	
+	&__approval {
+		width: 100%;
+		margin-bottom: 80px;
+
+		td {
+			padding: {
+				right: 20px;
+				bottom: 20px;
+			}
+			font-size: em(20);
+			vertical-align: top;
+			color: $gray--darker;
+		}
+		
+		a {
+			color: $blue--darker;
+			
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	@media screen and ( max-width: $smart_landscape ) {
+		input {
+			height: 40px;
+		}
+		
+		&__lead {
+			letter-spacing: normal;
+			font-size: em(18);
+		}
+		
+		&__approval {
+			td {
+				font-size: em(14);
+			}
+		}
+	}
+}

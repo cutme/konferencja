@@ -1,0 +1,28 @@
+.o-btn {
+	position: relative;
+	display: inline-block;
+	background-color: $blue;
+	padding: 10px 40px;
+	letter-spacing: 1px;
+	line-height: 1;
+	font-size: 2vw;
+	white-space: nowrap;
+	color: white;
+
+	&:hover {
+		background-color: darken($blue, 10%);
+	}
+	
+	@media screen and ( min-width: 1920px ) {
+		font-size: em(40);
+	}
+	
+	@media screen and ( max-width: $ipad_landscape ) {
+		font-size: em(24);
+	}
+	
+	@media screen and ( max-width: $smart_landscape ) {
+		width: 100%;
+		padding: 15px 0;
+	}
+}

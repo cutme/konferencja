@@ -1,0 +1,52 @@
+.c-nav-primary {
+	color: white;
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+		padding: 0 25px;
+		line-height: 4.05vw;
+		text-transform: uppercase;
+		font-size: 1.1vw;
+		
+		&.is-active {
+			background-color: $blue--darker;
+		}
+		
+		&:hover {
+			background-color: darken($blue, 5%);
+		}
+	}
+	
+	@media screen and ( min-width: 1920px ) {
+		a {
+			line-height: 80px;
+		}
+	}
+	
+	@media screen and ( max-width: $ipad_landscape ) {
+		a {
+			line-height: 60px;
+			font-size: em(18);
+		}
+	}
+	
+	@media screen and ( max-width: 900px ) {
+		display: none;
+	}
+	
+	&.is-mobile {
+		position: absolute; z-index: 20;
+		left: 0;
+		top: 60px;
+		width: 100%;
+		background-color: $blue;
+
+		li {
+			display: block;
+		}
+	}
+}
