@@ -1,7 +1,10 @@
 .o-wrap {
 	position: relative; z-index: 10;
 	max-width: $grid-base-width+px;
-	margin: 0 auto;
+	margin: {
+		left: auto;
+		right: auto;
+	}
 	padding: 0 20px;
 
 	&--wide {

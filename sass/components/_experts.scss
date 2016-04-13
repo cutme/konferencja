@@ -1,6 +1,5 @@
 .c-experts {
-	margin-bottom: 80px;
-	padding-bottom: 100px;
+	padding-bottom: 80px;
 	border-bottom: 2px solid $gray;
 	text-align: center;
 
@@ -59,11 +58,11 @@
 	}
 	
 	@media screen and ( max-width: $smart_landscape ) {
+		padding-bottom: 40px;
+
 		&__item {
 			width: 100%;
 			margin-bottom: 40px;
 		}
-	}
-	
-	
+	}	
 }

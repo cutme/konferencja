@@ -14,18 +14,26 @@ function debouncer(func, timeout) {
 }
 jQuery(function($) {
 	function goToTarget(target) {
-		var v = $('html, body');
-		console.log(target);
+		var v = $('html, body'),
+			topbarH = $('.c-topbar').height(), trigger = $('.c-nav-trigger');
+			
+		if (trigger.hasClass('is-active')) {
+			trigger.removeClass('is-active');
+			$('.c-nav-primary').hide();
+		}
+		var buffor = ($(window).width()<=480) ? 40 : 60;
+		
 		v.animate({
-			scrollTop: target
-		}, 500);
+			scrollTop: target - topbarH - buffor
+		}, {
+			duration: 500,
+			easing: 'easeOutCubic'
+		});
 	}
-
 	function window_smaller_than(n) {
 		var d = ($(window).width() < n) ? true : false;
 		return d;
 	}
-
 	function exist(o) { /* exist('.js-bigcaro') && S.bigcaro(); */
 		d = ($(o).length > 0) ? true : false;
 		return d;
@@ -82,21 +90,48 @@ jQuery(function($) {
 				};
 			el.each(function() {
 				var submit = $('.submit', this),
-					is_error, _t = $(this);
-				$('input, textarea, select', this).each(function() {
-					if ($(this).prop('required')) {
-						$(this).prev('.o-form__lead').append(' <i class="o-form__required">*</i>');
-					}
-				});
+					is_error, _t = $(this),
+					fields = $('.c-form__fields'),
+					thanks = $('.c-form__thanks'), offset;
+
 				submit.on('click', function(e) {
-					e.preventDefault();
+					e.preventDefault();			
 					is_error = validateStart(_t);
+					submit.attr('disabled', true);
+					offset = $('#register').offset().top;
+					
+					function sendAjax(data) {
+						$.ajax({
+							type: "POST",
+							cache: false,
+							url: el.attr('action'),
+							data: data,
+							success: function(msg) {
+								if (msg === 'ok') {
+									goToTarget(offset);
+									fields.hide();
+									thanks.fadeIn(2000);
+								} else {
+									thanks.hide();
+								}
+							},
+							error: function() {
+								submit.removeAttr("disabled");
+							}
+						});
+					}
 					if (is_error === 1) {
-						$('html, body').animate({
-							scrollTop: 0
-						}, 1500);
+						goToTarget(offset);
 					} else {
-						_t.submit();
+						var name = $("input[name='Name']").val(),
+							email = $("input[name='Email']").val(),
+							diet = $("textarea[name='Diet']").val(),
+							institution = $("input[name='Institution']").val(),
+							app1 = $("input[name='App1']").prop('checked'),
+							app2 = $("input[name='App2']").prop('checked'),
+							app3 = $("input[name='App3']").prop('checked'),
+							dataString = 'name=' + name + '&email=' + email + '&diet=' + diet + '&institution=' + institution + '&app1=' + app1 + '&app2=' + app2 + '&app3=' + app3;
+						sendAjax(dataString);
 						return true;
 					}
 				});
@@ -104,7 +139,7 @@ jQuery(function($) {
 		},
 		init: function() {
 			//exist('.js-mfp') && L.magnific();
-			//L.validate();			
+			L.validate();	
 		}
 	};
 	var N = {
@@ -147,16 +182,10 @@ jQuery(function($) {
 			$('.goto').on('click', function(e) {
 				e.preventDefault();
 				var target = $(this).attr('href'),
-					offset = $(target).offset().top,
-					topbarH = $('.c-topbar').height(),
-					trigger = $('.c-nav-trigger');
+					offset = $(target).offset().top;
 				$('.goto.is-active').removeClass('is-active');
-				$(this).addClass('is-active');
-				if (trigger.hasClass('is-active')) {
-					trigger.removeClass('is-active');
-					$('.c-nav-primary').hide();
-				}
-				goToTarget(offset - topbarH - 60);
+				$(this).addClass('is-active');								
+				goToTarget(offset);
 			});
 		}
 	}

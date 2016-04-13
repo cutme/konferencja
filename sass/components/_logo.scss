@@ -6,12 +6,24 @@
 	text-transform: uppercase;
 	white-space: nowrap;
 	font: {
-		//size: em(40);
 		size: 2.06vw;
 		weight: $bold;
 	}
 	
 	@media screen and ( min-width: 1920px ) {
 		margin-bottom: 120px;
+		font-size: em(40);
+	}
+	
+	@media screen and ( max-width: $ipad_portrait ) {
+		padding: 10px 20px;
+		border-width: 2px;
+		font-size: 3vw;
+	}
+	
+	@media screen and ( max-width: 375px ) {
+		font-size: 5vw;
+		padding: 10px 0;
+		white-space: normal;
 	}
 }

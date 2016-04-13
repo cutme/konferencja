@@ -1,6 +1,5 @@
 .c-top {
 	position: relative;
-	margin-bottom: 80px;
 	color: white;
 
 	&__content {
@@ -32,6 +31,39 @@
 	@media screen and ( min-width: $grid-base-width+px ) {
 		.o-media {
 			width: 100%;
+		}
+	}
+	
+	@media screen and ( max-width: $ipad_portrait ) {
+		&__lead {
+			font-size: 2.6vw;
+		}
+	}
+	
+	@media screen and ( max-width: $smart_landscape ) {
+		height: 400px;
+		overflow: hidden;
+		
+		&__content {
+			left: auto;
+			bottom: auto;
+			@include scut-center-transform(y);
+		}
+		
+		.o-media {
+			@include transform(translate(-50%, -50%));
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			max-width: none;
+			width: auto;
+			height: 100%;	
+		}
+	}
+	
+	@media screen and ( max-width: 375px) {
+		&__lead {
+			font-size: 4vw;
 		}
 	}
 }

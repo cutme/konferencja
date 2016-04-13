@@ -1,0 +1,7 @@
+.o-layout {
+	margin-bottom: 80px;
+	
+	@media screen and ( max-width: $smart_landscape ) {
+		margin-bottom: 40px;
+	}
+}

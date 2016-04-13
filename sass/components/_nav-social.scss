@@ -52,4 +52,28 @@
 			font-size: em(36);
 		}
 	}
+	
+	@media screen and ( max-width: $ipad_portrait ) {
+		height: 40px;
+		line-height: 30px;
+		
+		&__title, i {
+			letter-spacing: normal;
+			font-size: em(16);
+		}
+		
+		i {
+			margin-right: 5px;
+		}
+		
+		a {
+			padding: 0 10px;
+		}
+	}
+	
+	@media screen and ( max-width: $smart_landscape ) {
+		&__title, i {
+			font-size: em(12);
+		}
+	}
 }

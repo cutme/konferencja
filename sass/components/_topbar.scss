@@ -15,4 +15,8 @@
 	@media screen and ( max-width: $ipad_landscape ) {
 		height: 60px;
 	}
+	
+	@media screen and ( max-width: $smart_landscape ) {
+		height: 40px;
+	}
 }

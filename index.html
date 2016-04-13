@@ -50,8 +50,9 @@
 	</div>
 	
 	
-	<div class="c-top">
+	<div class="o-layout c-top">
 		<div class="c-top__content u-align-center">
+			<div class="o-wrap">
 			<span class="c-logo">Technologie Bankowości spółdzielczej</span>
 			
 			<p class="c-top__lead">Konferencja szkoleniowa dla<br /> banków spółdzielczych</p>
@@ -66,6 +67,7 @@
 					<i class="icon-calendar"></i>
 					<span class="c-location__title">8-10 maja 2016</span>
 				</li>
+			</div>
 			</div>
 		</div>
 
@@ -99,14 +101,14 @@
 
 
 	<div id="about">		
-		<div class="o-wrap c-regular">
+		<div class="o-wrap o-layout c-regular">
 			<div class="o-header">
 				<h2>O konferencji</h2>
 			</div>
 			
 			<p>
 			Zapraszamy na drugie sopockie spotkanie z cyklu  Technologie w Bankowości Spółdzielczej. Będziemy rozmawiać 
-	o najnowszych trendach konsumenckich i technologicznych. O  bezpieczeństwie i regulacjach prawnych. O nowych usługach,  technologiach i źródłach przychodu.  <strong class="color-blue--darker u-uppercase">O wszystkim co ważne w  bankowości elektronicznej</strong>. 
+	o najnowszych trendach konsumenckich i technologicznych. O  bezpieczeństwie i regulacjach prawnych. O nowych usługach,  technologiach i źródłach przychodu.<br />  <strong class="color-blue--darker u-uppercase">O wszystkim co ważne w  bankowości elektronicznej</strong>. 
 			</p>
 	
 			<p>
@@ -121,12 +123,12 @@
 		</div>
 
 		<div class="c-photo">
-			<img src="img/photo-2.jpg" alt="" class="o-media" />
+			<img src="img/photo-2.jpg" alt="" class="o-media o-layout" />
 		</div>
 	</div>
 
 
-	<div id="program" class="c-program clear">		
+	<div id="program" class="o-layout c-program clear">		
 		<div class="o-wrap o-wrap--wide">
 			<div class="o-header">
 				<h2>Program</h2>
@@ -354,7 +356,7 @@ opowieści do XXX </strong>
 	</div>
 	
 
-	<div id="experts" class="c-experts clear">
+	<div id="experts" class="o-layout c-experts clear">
 		<div class="o-wrap o-wrap--wide">
 			<div class="o-header">
 				<h2>Eksperci</h2>
@@ -393,43 +395,42 @@ opowieści do XXX </strong>
 	</div>
 
 
-	<div id="register" class="o-wrap">
+	<div id="register" class="o-layout o-wrap">
 		<div class="o-header">
 			<h2>Rejestracja</h2>
 		</div>
 		
-		<form action="#" class="c-form c-register">
-			<fieldset class="c-register__fields">
+		<form action="register.php" class="c-form">
+			<fieldset class="c-form__fields">
 				<label>
 					<span class="c-form__lead">Imię i nazwisko</span>
-					<input type="text" />
+					<input type="text" name="Name" autocomplete="off" required />
 				</label>
 				
 				<label>
 					<span class="c-form__lead">Numer telefonu</span>
-					<input type="text" />
+					<input type="text" autocomplete="off" name="Phone" />
 				</label>
 				
 				<label>
 					<span class="c-form__lead">Adres e-mail</span>
-					<input type="text" />
+					<input type="text" autocomplete="off" name="Email" />
 				</label>
 				
 				<label>
 					<span class="c-form__lead">Instytucja</span>
-					<input type="text" />
+					<input type="text" autocomplete="off" name="Institution" />
 				</label>
 				
 				<label>
 					<span class="c-form__lead">Dieta</span>
-					<textarea></textarea>
+					<textarea name="Diet"></textarea>
 				</label>
-				
 				
 				<table class="c-form__approval">
 					<tr>
 						<td>
-							<input type="checkbox" />
+							<input type="checkbox" name="App1" required />
 						</td>
 						<td>
 							Chcę uczestniczyć w <a href="#">morskiej przygodzie</a> 
@@ -438,7 +439,7 @@ opowieści do XXX </strong>
 					
 					<tr>
 						<td>
-							<input type="checkbox" />
+							<input type="checkbox" name="App2" />
 						</td>
 						<td>
 							Wyrażam zgodę na przetwarzanie przez Blue Media S.A. z siedzibą w Sopocie oraz spółki należące do grupy kapitałowej Blue Media moich danych osobowych zawartych w dokumentach aplikacyjnych w celu realizacji procesu rekrutacji (zgodnie z ustawą z dn. 29.08.97 roku o ochronie danych osobowych Dz. U 2014.1182 t.j.).
@@ -447,7 +448,7 @@ opowieści do XXX </strong>
 					
 					<tr>
 						<td>
-							<input type="checkbox" />
+							<input type="checkbox" name="App3" />
 						</td>
 						<td>
 							Wyrażam zgodę na przetwarzanie przez Blue Media S.A. z siedzibą w Sopocie oraz spółki należące do grupy kapitałowej Blue Media moich danych osobowych zawartych w dokumentach aplikacyjnych w celu ich przechowywania i wykorzystywania na potrzeby realizacji kolejnych rekrutacji (zgodnie z ustawą z dn. 29.08.97 roku o ochronie danych osobowych Dz. U 2014.1182 t.j.).
@@ -455,11 +456,15 @@ opowieści do XXX </strong>
 					</tr>
 					
 					
-				</table>				
+				</table>		
+				
+				<p class="u-align-center">
+					<a href="#" class="o-btn submit">Wyślij</a>
+				</p>		
 			</fieldset>			
 			
-			<fieldset class="c-register__submit u-align-center">
-				<a href="#" class="o-btn">Wyślij</a>
+			<fieldset class="c-form__thanks">
+				<p class="u-align-center">Dziękujemy, Twoja rejestracja została zgłoszona.</p>
 			</fieldset>
 		</form>
 	</div>
@@ -512,7 +517,7 @@ opowieści do XXX </strong>
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js" data-headjs-load="js/init.js"></script>
 
-<script type="text/javascript">WebFontConfig={google:{families:['Lato:400,300,700:latin']}};(function(){var wf=document.createElement('script');wf.src='https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';wf.type='text/javascript';wf.async='true';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(wf,s);})();</script>
+<script type="text/javascript">WebFontConfig={google:{families:['Lato:400,300,700:latin,latin-ext']}};(function(){var wf=document.createElement('script');wf.src='https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';wf.type='text/javascript';wf.async='true';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(wf,s);})();</script>
 
 </body>
 </html>

@@ -1,11 +1,14 @@
 .c-regular {
-	margin-bottom: 100px;
 	
 	p {
 		margin-bottom: 2em;
 		
 		@media screen and ( max-width: $ipad_portrait ) {
 			font-size: em(18);
+		}
+		
+		@media screen and ( max-width: $smart_landscape ) {
+			font-size: em(16);
 		}
 	}
 }

@@ -48,5 +48,9 @@
 		li {
 			display: block;
 		}
+		
+		@media screen and ( max-width: $smart_landscape ) {
+			top: 40px;
+		}
 	}
 }
