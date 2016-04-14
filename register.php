@@ -6,6 +6,7 @@ if(empty($_POST['name'])) {
 
 $name			= $_POST['name'];
 $email			= $_POST['email'];
+$phone			= $_POST['phone'];
 $diet			= $_POST['diet'];
 $institution	= $_POST['institution'];
 $app1			= $_POST['app1'];
@@ -20,6 +21,7 @@ $headers = 'From: '.$name.' <'.$email.'>'."\r\n" .
 $subject = 'kontakt ze strony konferencji';
 $body.='Imię i nazwisko: '.$name."\n";
 $body.='E-mail: '.$email."\n";
+$body.='Telefon: '.$phone."\n";
 
 if (!empty($diet)) {
 	$body.='Dieta: '.$diet."\n";

@@ -125,12 +125,13 @@ jQuery(function($) {
 					} else {
 						var name = $("input[name='Name']").val(),
 							email = $("input[name='Email']").val(),
+							phone = $("input[name='Phone']").val(),
 							diet = $("textarea[name='Diet']").val(),
 							institution = $("input[name='Institution']").val(),
 							app1 = $("input[name='App1']").prop('checked'),
 							app2 = $("input[name='App2']").prop('checked'),
 							app3 = $("input[name='App3']").prop('checked'),
-							dataString = 'name=' + name + '&email=' + email + '&diet=' + diet + '&institution=' + institution + '&app1=' + app1 + '&app2=' + app2 + '&app3=' + app3;
+							dataString = 'name=' + name + '&email=' + email + '&diet=' + diet + '&phone=' + phone + '&institution=' + institution + '&app1=' + app1 + '&app2=' + app2 + '&app3=' + app3;
 						sendAjax(dataString);
 						return true;
 					}
