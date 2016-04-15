@@ -482,7 +482,7 @@ opowieści do tawerny <a href="#after" class="goto">Czarna Perła.</a> </strong>
 			<h2>Rejestracja</h2>
 		</div>
 		
-		<form action="register.php" class="c-form">
+		<form action="register.php" method="post" class="c-form">
 			<fieldset class="c-form__fields">
 				<label>
 					<span class="c-form__lead">Imię i nazwisko</span>
@@ -491,12 +491,12 @@ opowieści do tawerny <a href="#after" class="goto">Czarna Perła.</a> </strong>
 				
 				<label>
 					<span class="c-form__lead">Numer telefonu</span>
-					<input type="text" autocomplete="off" name="Phone" required />
+					<input type="tel" autocomplete="off" name="Phone" maxlength="9" required />
 				</label>
 				
 				<label>
 					<span class="c-form__lead">Adres e-mail</span>
-					<input type="text" autocomplete="off" name="Email" required />
+					<input type="email" autocomplete="off" name="Email" required />
 				</label>
 				
 				<label>

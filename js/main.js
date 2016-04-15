@@ -55,7 +55,8 @@ jQuery(function($) {
 		validate: function() {
 			var el = $('form'),
 				error = 0,
-				errorClass = 'has-error',
+				errorClass = 'has-error', email,
+				reg_tel = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/,
 				reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 			function checkField(o) {
@@ -69,7 +70,7 @@ jQuery(function($) {
 			var validateStart = function(o) {
 					error = 0;
 					el.find('.has-error').removeClass(errorClass);
-					$('[type=text], [type=tel], [type=password], [type=date], textarea', o).each(function() {
+					$('[type=text], [type=password], [type=date], textarea', o).each(function() {
 						$(this).prop('required') === true && checkField(this);
 					});
 					$('[type=email], [type=text], [type=password]', o).on('keydown', function() {
@@ -77,11 +78,29 @@ jQuery(function($) {
 					});
 					$('[type=email]', o).each(function() {
 						if ($(this).prop('required')) {
-							var email = $(this).val();
+							email = $(this).val();
 							if (email === '') {
 								$(this).parent().addClass(errorClass);
 								error = 1;
 							} else if (reg.test(email) === false) {
+								$(this).parent().addClass(errorClass);
+								error = 1;
+							} else {
+								$(this).parent().removeClass(errorClass);
+							}
+						}
+					});
+					
+					$('[type=tel]', o).each(function() {
+						if ($(this).prop('required')) {
+							var tel = $(this).val();
+							if (tel === '') {
+								$(this).parent().addClass(errorClass);
+								error = 1;
+							} else if (reg_tel.test(tel) === false) {
+								$(this).parent().addClass(errorClass);
+								error = 1;
+							} else if ($(this).val().length < 9) {
 								$(this).parent().addClass(errorClass);
 								error = 1;
 							} else {
@@ -146,6 +165,7 @@ jQuery(function($) {
 							app3 = $("input[name='App3']").prop('checked'),
 							dataString = 'name=' + name + '&email=' + email + '&diet=' + diet + '&phone=' + phone + '&institution=' + institution + '&app1=' + app1 + '&app2=' + app2 + '&app3=' + app3;
 						sendAjax(dataString);
+						console.log(dataString);
 						return true;
 					}
 				});
