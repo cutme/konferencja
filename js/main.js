@@ -39,6 +39,19 @@ jQuery(function($) {
 		return d;
 	}
 	var L = {
+		modal: function() {
+			$('.mfc-modal').on('click', function(e) {
+				e.preventDefault();
+				var target = $(this).attr('href');
+				$.magnificPopup.open({
+                    items: {
+                        src: target,
+                        type: 'inline'
+                    },
+					mainClass: 'mfp-fade mfp-modal'
+                });
+			});	
+		},
 		validate: function() {
 			var el = $('form'),
 				error = 0,
@@ -139,7 +152,7 @@ jQuery(function($) {
 			});
 		},
 		init: function() {
-			//exist('.js-mfp') && L.magnific();
+			exist('.mfc-modal') && L.modal();
 			L.validate();	
 		}
 	};

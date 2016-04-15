@@ -11,7 +11,7 @@
 	}
 	
 	&__item {
-		float: left;
+		display: inline-block;
 		width: grid(370, $grid-base-width-wide);
 		margin-bottom: 80px;
 	}
