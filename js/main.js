@@ -148,6 +148,7 @@ jQuery(function($) {
 								}
 							},
 							error: function() {
+								alert('sending error');
 								submit.removeAttr("disabled");
 							}
 						});
@@ -165,7 +166,6 @@ jQuery(function($) {
 							app3 = $("input[name='App3']").prop('checked'),
 							dataString = 'name=' + name + '&email=' + email + '&diet=' + diet + '&phone=' + phone + '&institution=' + institution + '&app1=' + app1 + '&app2=' + app2 + '&app3=' + app3;
 						sendAjax(dataString);
-						console.log(dataString);
 						return true;
 					}
 				});
